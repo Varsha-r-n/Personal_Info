@@ -1,0 +1,28 @@
+.footer{
+    min-height: 50px;
+    height: 15%;
+    padding: 10px 30px;
+    display: inline-flex;
+    vertical-align: middle;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.goBack{
+    border: 0px;
+    background-color: white;
+    color: gray;
+    font-weight: bolder;
+    height: 35px;
+    cursor: pointer;
+}
+.nextStep{
+    background-color: lightblue;
+    color: white;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    font-weight: bolder;
+    float: right;
+    height: 35px;
+    cursor: pointer;
+}

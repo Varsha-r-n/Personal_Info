@@ -1,0 +1,12 @@
+.header{
+    min-height: 80px;
+    height: 15%;
+    padding: 10px 30px;
+}
+.title{
+    font-weight: bolder;
+    font-size: x-large;
+}
+.description{
+    font-weight: lighter;
+}

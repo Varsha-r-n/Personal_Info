@@ -1,0 +1,8 @@
+.navigation {
+    height: 100%;
+    width:30%;
+    background-color: blue;
+    padding: 10px;
+    display: inline-flex;
+    flex-flow: column;
+}
