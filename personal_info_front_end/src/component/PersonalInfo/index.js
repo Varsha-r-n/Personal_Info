@@ -3,7 +3,9 @@ import "./personalInfo.css"
 function PersonalInfo() {
   return (
     <div className='personalInfo'>
-      PersonalInfo
+      <div className='name'>name
+        <input>Vanessa Mint</input>
+      </div>
     </div>
   )
 }
