@@ -1,54 +1,68 @@
 import { React, useState, useEffect } from "react";
 import "./personalInfo.css";
-function PersonalInfo({setPersonalInfoHasErrors, setPersonalInfo, personalInfo}) {
+function PersonalInfo({
+  setPersonalInfoHasErrors,
+  setPersonalInfo,
+  personalInfo,
+}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
   useEffect(() => {
-    if(name && email && phone){
-      setPersonalInfoHasErrors(false)
+    if (name && email && phone) {
+      setPersonalInfoHasErrors(false);
     }
-  }, [name, email, phone])
+  }, [name, email, phone]);
   const validateAndSetName = (e) => {
     const value = e.target.value;
     setName(value);
-    if(!value){
-      document.getElementById("fnameError").style.display='block'
-    }else{
-      document.getElementById("fnameError").style.display='none'
+    if (!value) {
+      document.getElementById("fnameError").style.display = "block";
+    } else {
+      document.getElementById("fnameError").style.display = "none";
     }
     setPersonalInfo({
       ...personalInfo,
-      name
-    })
+      name,
+    });
+  };
+
+  function validateEmail(email) {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(String(email).toLowerCase());
   }
+  function validateMobileNumber(number) {
+    const re = /^[0-9]{10}$/;
+    return re.test(String(number));
+}
+
   const validateAndSetEmail = (e) => {
     const value = e.target.value;
     setEmail(e.target.value);
-    if(!value){
-      document.getElementById("emailError").style.display='block'
-    }else{
-      document.getElementById("emailError").style.display='none'
+    if (!value || !validateEmail(value)) {
+      document.getElementById("emailError").style.display = "block";
+    } else {
+      document.getElementById("emailError").style.display = "none";
     }
     setPersonalInfo({
       ...personalInfo,
-      email
-    })
-  }
+      email,
+    });
+  };
   const validateAndSetPhone = (e) => {
     const value = e.target.value;
     setPhone(e.target.value);
-    if(!value){
-      document.getElementById("phoneError").style.display='block'
-    }else{
-      document.getElementById("phoneError").style.display='none'
+    if (!value || !validateMobileNumber(value)) {
+      document.getElementById("phoneError").style.display = "block";
+    } else {
+      document.getElementById("phoneError").style.display = "none";
     }
     setPersonalInfo({
       ...personalInfo,
-      phone
-    })
-  }
+      phone,
+    });
+  };
 
   return (
     <div className="personalInfo">
@@ -80,7 +94,7 @@ function PersonalInfo({setPersonalInfoHasErrors, setPersonalInfo, personalInfo})
             onBlur={validateAndSetEmail}
           />
           <span id="emailError" className="error">
-            Email-Address is required
+            Email-Address is empty or invalid
           </span>
         </div>
         <div className="formField">
@@ -96,7 +110,7 @@ function PersonalInfo({setPersonalInfoHasErrors, setPersonalInfo, personalInfo})
             onBlur={validateAndSetPhone}
           />
           <span id="phoneError" className="error">
-            Phone Number is required
+            Phone Number is empty or invalid
           </span>
         </div>
       </form>
