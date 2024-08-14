@@ -1,35 +1,42 @@
 import React from "react";
-import { Select } from "antd";
 import "./summary.css";
 
-function Summary() {
-  const handleChange = (value) => {
-    console.log(`selected ${value}`);
+function Summary({ personalInfo, selectedPlan, selectedAddOns }) {
+  const getAddons = () => {
+    return selectedAddOns.map((addon) => {
+      return (
+        <div className="common addOnsRow" key={addon.addOnId}>
+          <div>{addon.addOnName}</div>
+          <div>{addon.addOnPrice}</div>
+        </div>
+      );
+    });
   };
 
+  const getTotal = () => {
+    let total = selectedPlan.planDuration*selectedPlan.planPrice;
+    selectedAddOns.forEach(addon => {
+      total = total + addon.addOnPrice;
+    });
+    return total;
+  }
+  const duration = selectedPlan.planDuration == 1 ? 'Monthly' : 'Yearly'
   return (
     <div className="summary">
-      <div className="SummarySelect">
-        <Select
-          defaultValue={"Arcade(Monthly)"}
-          style={{ width: 200 }}
-          onChange={handleChange}
-          options={[
-            {
-              label: <span>Online service</span>,
-              value: "Online service",
-            },
-            {
-              label: <span>Larger storage</span>,
-              value: "Larger storage",
-            },
-            {
-              label: <span>Customizable Profile</span>,
-              value: "Customizable Profile",
-            },
-          ]}
-        />
+      <div className="common planNameDetails">
+        <div className="planName">
+          {selectedPlan.planName+'('+duration+')'}
+        </div>
+        <div className="planPrice">{'$'+selectedPlan.planPrice+'/mo'}</div>
       </div>
+      <div className="horizontalLine" />
+      {getAddons()}
+
+      <div className="common total">
+        <div>Total(per month)</div>
+        <div className="finalPrice">{'+$'+getTotal()+'/mo'}</div>
+      </div>
+
     </div>
   );
 }

@@ -17,12 +17,12 @@ function BodyComponent({title, description, selectedState, setSelectedState, set
   const [pickAddOnsHasErrors, setPickAddOnsHasErrors] = useState(true);
   return (
     <div className="bodyComponent">
-      <Header title={title} description={description} />
+      {selectedState != 5 && <Header title={title} description={description} />}
       {selectedState == 1 && <PersonalInfo setPersonalInfo={setPersonalInfo} personalInfo={personalInfo} setPersonalInfoHasErrors={setPersonalInfoHasErrors} />}
       {selectedState == 2 && <SelectPlan selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} setSelectPlanHasErrors={setSelectPlanHasErrors} />}
       {selectedState == 3 && <PickAddOns selectedAddOns={selectedAddOns} setSelectedAddOns={setSelectedAddOns} setPickAddOnsHasErrors={setPickAddOnsHasErrors} />}
       {selectedState == 4 && <Summary personalInfo={personalInfo} selectedPlan={selectedPlan} selectedAddOns={selectedAddOns} />}
-      {selectedState == 5 && <ThankYou />}
+      {selectedState == 5 && <ThankYou title={title} description={description} />}
       <Footer 
         pageNum={selectedState} 
         setSelectedState={setSelectedState} 

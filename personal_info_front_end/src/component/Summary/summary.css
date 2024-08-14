@@ -1,0 +1,31 @@
+.summary{
+    background-color: aliceblue;
+    margin: 50px;
+    display: inline-flex;
+    flex-direction: column;
+    width: 600px;
+}
+.common{
+    padding: 10px;
+    display: inline-flex;
+    justify-content: space-between;
+    color: gray;
+}
+.horizontalLine{
+    width: 580px;
+    border: 1px solid lightgray;
+    margin: 0px 10px;
+}
+
+.planNameDetails{
+    font-weight: bold;
+    color: darkblue;
+}
+
+.total{
+    background-color: white;
+}
+.finalPrice{
+    font-weight: bold;
+    color: blue;
+}
