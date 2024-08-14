@@ -1,0 +1,46 @@
+
+.plan{
+    height: 150px;
+    width: 100px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 50px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10%;
+    background-color: pink;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.plan:hover{
+    border: 2px solid blue;
+}
+.planSelected{
+    border: 2px solid darkblue;
+}
+.icons{
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    border-radius: 45%;
+    text-align: center;
+    background-color: aqua;
+    margin: 15px;
+    padding: 5px;
+}
+.planDurationSwitch{
+    background-color: aqua;
+    text-align: center;
+}
+.selectedDuration{
+    font-weight: bold;
+    color: darkblue;
+}
+.switch{
+    display: inline-block ;
+    margin: 20px;
+    
+}
+.payment{
+    font-weight: lighter;
+}

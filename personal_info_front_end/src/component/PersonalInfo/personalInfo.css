@@ -2,4 +2,20 @@
     min-height: 300px;
     height: 70%;
     padding: 10px 30px;
+    
+}
+.error{
+    display: none;
+    color: red;
+    font-size: small;
+    text-align: end;
+    margin-right: 200px
+}
+.formField {
+    height: 70px;
+}
+.formField input {
+    width: 70%;
+    height: 40px;
+    border-radius: 1rem;
 }

@@ -1,0 +1,33 @@
+.pickAddOns{
+    height: 400px;
+    width: 100%;
+    background-color: azure;
+    display: inline-block;
+
+}
+.addOnes{
+    height: 50px;
+    width: 50%;
+    border: 1px solid blue;
+    margin: 20px;
+    padding: 25px;
+}
+.checkBox{
+    
+    padding: 1px;
+    display: inline-block;
+}
+.service{
+    margin-left: 10px;
+    font-weight: bolder;
+    display: inline-block;
+}
+.serviceDetails{
+    font-weight: lighter;
+}
+.monthlyCharges{
+    color: blue;
+    float:right;
+    margin:;
+    
+}
